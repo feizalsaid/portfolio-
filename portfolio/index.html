@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional Portfolio - Feizal Said, Cybersecurity Analyst">
+    <title>Feizal Said - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'charcoal': '#1E1E1E',
+                        'dark-neutral': '#2D2D2D',
+                        'soft-gray': '#E0E0E0',
+                        'soft-gray-secondary': '#b0b0b0',
+                        'vibrant-blue': '#3B82F6',
+                        'vibrant-blue-dark': '#2563eb',
+                        'border-gray': '#404040',
+                        'bg-dark': '#0f0f0f',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans text-soft-gray bg-charcoal overflow-x-hidden">
+    <!-- Loading Screen -->
+    <div id="loader" class="fixed inset-0 z-50 flex items-center justify-center bg-charcoal transition-opacity duration-500">
+        <div class="text-center loader-container">
+            <!-- Animated Logo/Icon -->
+            <div class="loader-animation mb-8">
+                <div class="relative w-24 h-24 md:w-28 md:h-28 mx-auto">
+                    <!-- Outer rotating ring -->
+                    <div class="absolute inset-0 border-4 border-vibrant-blue/20 rounded-full"></div>
+                    <div class="absolute inset-0 border-4 border-transparent border-t-vibrant-blue rounded-full animate-spin-slow"></div>
+                    <!-- Middle ring -->
+                    <div class="absolute inset-2 border-4 border-vibrant-blue/30 rounded-full"></div>
+                    <div class="absolute inset-2 border-4 border-transparent border-r-vibrant-blue rounded-full animate-spin-reverse"></div>
+                    <!-- Inner dot -->
+                    <div class="absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-vibrant-blue rounded-full animate-pulse"></div>
+                </div>
+            </div>
+            <!-- Name with typing effect -->
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-vibrant-blue mb-3 loader-name">
+                <span class="inline-block">F</span>
+                <span class="inline-block">e</span>
+                <span class="inline-block">i</span>
+                <span class="inline-block">z</span>
+                <span class="inline-block">a</span>
+                <span class="inline-block">l</span>
+                <span class="inline-block mx-2">&nbsp;</span>
+                <span class="inline-block">S</span>
+                <span class="inline-block">a</span>
+                <span class="inline-block">i</span>
+                <span class="inline-block">d</span>
+            </h1>
+            <!-- Loading text -->
+            <div class="flex items-center justify-center gap-2 text-soft-gray-secondary text-sm md:text-base">
+                <span class="loading-dots">
+                    <span class="inline-block w-2 h-2 bg-vibrant-blue rounded-full animate-bounce"></span>
+                    <span class="inline-block w-2 h-2 bg-vibrant-blue rounded-full animate-bounce" style="animation-delay: 0.1s;"></span>
+                    <span class="inline-block w-2 h-2 bg-vibrant-blue rounded-full animate-bounce" style="animation-delay: 0.2s;"></span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-charcoal/95 backdrop-blur-md shadow-sm z-50 border-b border-vibrant-blue/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <div class="nav-brand">
+                    <a href="#home" class="text-xl md:text-2xl font-bold text-vibrant-blue hover:text-vibrant-blue-dark transition-colors duration-300">Feizal Said</a>
+                </div>
+                <button class="md:hidden flex flex-col gap-1 p-2 mobile-menu-toggle" aria-label="Toggle menu">
+                    <span class="w-6 h-0.5 bg-soft-gray rounded transition-all duration-300"></span>
+                    <span class="w-6 h-0.5 bg-soft-gray rounded transition-all duration-300"></span>
+                    <span class="w-6 h-0.5 bg-soft-gray rounded transition-all duration-300"></span>
+                </button>
+                <ul class="hidden md:flex md:gap-8 md:items-center nav-menu">
+                    <li><a href="#home" class="nav-link text-soft-gray hover:text-vibrant-blue transition-colors duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-vibrant-blue after:transition-all after:duration-300 hover:after:w-full">Home</a></li>
+                    <li><a href="#about" class="nav-link text-soft-gray hover:text-vibrant-blue transition-colors duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-vibrant-blue after:transition-all after:duration-300 hover:after:w-full">About</a></li>
+                    <li><a href="#skills" class="nav-link text-soft-gray hover:text-vibrant-blue transition-colors duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-vibrant-blue after:transition-all after:duration-300 hover:after:w-full">Skills</a></li>
+                    <li><a href="#projects" class="nav-link text-soft-gray hover:text-vibrant-blue transition-colors duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-vibrant-blue after:transition-all after:duration-300 hover:after:w-full">Projects</a></li>
+                    <li><a href="#contact" class="nav-link text-soft-gray hover:text-vibrant-blue transition-colors duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-vibrant-blue after:transition-all after:duration-300 hover:after:w-full">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <ul class="md:hidden fixed top-16 left-0 w-full bg-dark-neutral -translate-x-full transition-transform duration-300 shadow-xl border-t border-border-gray nav-menu-mobile">
+            <li class="border-b border-border-gray"><a href="#home" class="block px-6 py-4 text-soft-gray hover:text-vibrant-blue hover:bg-dark-neutral transition-colors duration-300">Home</a></li>
+            <li class="border-b border-border-gray"><a href="#about" class="block px-6 py-4 text-soft-gray hover:text-vibrant-blue hover:bg-dark-neutral transition-colors duration-300">About</a></li>
+            <li class="border-b border-border-gray"><a href="#skills" class="block px-6 py-4 text-soft-gray hover:text-vibrant-blue hover:bg-dark-neutral transition-colors duration-300">Skills</a></li>
+            <li class="border-b border-border-gray"><a href="#projects" class="block px-6 py-4 text-soft-gray hover:text-vibrant-blue hover:bg-dark-neutral transition-colors duration-300">Projects</a></li>
+            <li class="border-b border-border-gray"><a href="#contact" class="block px-6 py-4 text-soft-gray hover:text-vibrant-blue hover:bg-dark-neutral transition-colors duration-300">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-16 md:pt-20 bg-gradient-to-br from-charcoal to-dark-neutral relative overflow-hidden">
+        <div class="absolute inset-0 opacity-50 hero-pattern"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="max-w-4xl mx-auto hero-content">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                    <span class="block text-lg sm:text-xl md:text-2xl font-normal opacity-90 mb-2">Hi, I'm</span>
+                    <span class="block text-vibrant-blue">Feizal Said</span>
+                    <span class="block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-normal opacity-90 mt-2">Cybersecurity Analyst</span>
+                </h1>
+                <p class="text-lg sm:text-xl md:text-2xl mb-8 opacity-95 leading-relaxed max-w-3xl mx-auto">
+                    I specialize in defensive security and threat analysis, solving complex security challenges
+                    and strengthening systems. Certified in HTB CJCA, CompTIA Security+, and ISC² CC.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#projects" class="px-8 py-3.5 bg-transparent border-2 border-vibrant-blue text-vibrant-blue font-semibold rounded-lg hover:bg-vibrant-blue/10 hover:-translate-y-0.5 transition-all duration-300 shadow-lg hover:shadow-xl">View My Work</a>
+                    <a href="#contact" class="px-8 py-3.5 bg-transparent border-2 border-soft-gray text-soft-gray font-semibold rounded-lg hover:bg-soft-gray/10 hover:text-vibrant-blue hover:border-vibrant-blue hover:-translate-y-0.5 transition-all duration-300">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 scroll-indicator">
+            <div class="w-8 h-12 border-2 border-vibrant-blue rounded-full relative">
+                <div class="absolute top-2 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-vibrant-blue rounded-full animate-scroll"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 md:py-24 bg-dark-neutral">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 md:mb-16 relative">
+                <span class="relative inline-block">
+                    About Me
+                    <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-vibrant-blue to-transparent rounded"></span>
+                </span>
+            </h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-6 text-lg md:text-xl text-soft-gray-secondary leading-relaxed">
+                    <p>
+                        I'm a dedicated cybersecurity analyst with a strong foundation in defensive security and threat analysis. Certified in HTB CJCA, CompTIA Security+, and ISC² CC, I enjoy solving complex security challenges and strengthening systems. When I'm not learning, I'm sharpening my skills through labs, research, and continuous hands-on practice.
+                    </p>
+                    <p>
+                        I also develop websites for fun, combining my technical skills with creative problem-solving. 
+                        Whether it's analyzing threats or building web applications, I'm passionate about technology and continuous learning.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 mt-12">
+                    <div class="text-center p-6 bg-charcoal border border-border-gray rounded-lg shadow-md hover:-translate-y-1 transition-transform duration-300">
+                        <span class="block text-4xl md:text-5xl font-bold text-vibrant-blue mb-2">3</span>
+                        <span class="block text-sm md:text-base text-soft-gray-secondary uppercase tracking-wider">Certifications</span>
+                    </div>
+                    <div class="text-center p-6 bg-charcoal border border-border-gray rounded-lg shadow-md hover:-translate-y-1 transition-transform duration-300">
+                        <span class="block text-4xl md:text-5xl font-bold text-vibrant-blue mb-2">100+</span>
+                        <span class="block text-sm md:text-base text-soft-gray-secondary uppercase tracking-wider">Labs Completed</span>
+                    </div>
+                    <div class="text-center p-6 bg-charcoal border border-border-gray rounded-lg shadow-md hover:-translate-y-1 transition-transform duration-300">
+                        <span class="block text-4xl md:text-5xl font-bold text-vibrant-blue mb-2">20+</span>
+                        <span class="block text-sm md:text-base text-soft-gray-secondary uppercase tracking-wider">Tools Mastered</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 md:py-24 bg-charcoal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 md:mb-16 relative">
+                <span class="relative inline-block">
+                    Skills & Technologies
+                    <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-vibrant-blue to-transparent rounded"></span>
+                </span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-dark-neutral border border-border-gray p-6 rounded-xl shadow-md hover:-translate-y-1 transition-transform duration-300">
+                    <h3 class="text-xl md:text-2xl font-semibold mb-4 text-soft-gray">Security & Analysis</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-4 py-2 bg-vibrant-blue/10 text-vibrant-blue border border-vibrant-blue rounded-full text-sm font-medium hover:scale-105 transition-transform duration-300">Defensive Security</span>
+                        <span class="px-4 py-2 bg-vibrant-blue/10 text-vibrant-blue border border-vibrant-blue rounded-full text-sm font-medium hover:scale-105 transition-transform duration-300">Threat Analysis</span>
+                        <span class="px-4 py-2 bg-vibrant-blue/10 text-vibrant-blue border border-vibrant-blue rounded-full text-sm font-medium hover:scale-105 transition-transform duration-300">Vulnerability Assessment</span>
+                        <span class="px-4 py-2 bg-vibrant-blue/10 text-vibrant-blue border border-vibrant-blue rounded-full text-sm font-medium hover:scale-105 transition-transform duration-300">Incident Response</span>
+                        <span class="px-4 py-2 bg-vibrant-blue/10 text-vibrant-blue border border-vibrant-blue rounded-full text-sm font-medium hover:scale-105 transition-transform duration-300">SIEM</span>
+                        <span class="px-4 py-2 bg-vibrant-blue/10 text-vibrant-blue border border-vibrant-blue rounded-full text-sm font-medium hover:scale-105 transition-transform duration-300">Network Security</span>
+                    </div>
+                </div>
+                <div class="bg-dark-neutral border border-border-gray p-6 rounded-xl shadow-md hover:-translate-y-1 transition-transform duration-300">
+                    <h3 class="text-xl md:text-2xl font-semibold mb-4 text-soft-gray">Certifications</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-4 py-2 bg-vibrant-blue/10 text-vibrant-blue border border-vibrant-blue rounded-full text-sm font-medium hover:scale-105 transition-transform duration-300">HTB CJCA</span>
+                        <span class="px-4 py-2 bg-vibrant-blue/10 text-vibrant-blue border border-vibrant-blue rounded-full text-sm font-medium hover:scale-105 transition-transform duration-300">CompTIA Security+</span>
+                        <span class="px-4 py-2 bg-vibrant-blue/10 text-vibrant-blue border border-vibrant-blue rounded-full text-sm font-medium hover:scale-105 transition-transform duration-300">ISC² CC</span>
+                        <span class="px-4 py-2 bg-vibrant-blue/10 text-vibrant-blue border border-vibrant-blue rounded-full text-sm font-medium hover:scale-105 transition-transform duration-300">Linux+</span>
+                    </div>
+                </div>
+                <div class="bg-dark-neutral border border-border-gray p-6 rounded-xl shadow-md hover:-translate-y-1 transition-transform duration-300">
+                    <h3 class="text-xl md:text-2xl font-semibold mb-4 text-soft-gray">Tools & Technologies</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-4 py-2 bg-vibrant-blue/10 text-vibrant-blue border border-vibrant-blue rounded-full text-sm font-medium hover:scale-105 transition-transform duration-300">Wireshark</span>
+                        <span class="px-4 py-2 bg-vibrant-blue/10 text-vibrant-blue border border-vibrant-blue rounded-full text-sm font-medium hover:scale-105 transition-transform duration-300">Nmap</span>
+                        <span class="px-4 py-2 bg-vibrant-blue/10 text-vibrant-blue border border-vibrant-blue rounded-full text-sm font-medium hover:scale-105 transition-transform duration-300">Python</span>
+                        <span class="px-4 py-2 bg-vibrant-blue/10 text-vibrant-blue border border-vibrant-blue rounded-full text-sm font-medium hover:scale-105 transition-transform duration-300">Linux</span>
+                        <span class="px-4 py-2 bg-vibrant-blue/10 text-vibrant-blue border border-vibrant-blue rounded-full text-sm font-medium hover:scale-105 transition-transform duration-300">Bash</span>
+                        <span class="px-4 py-2 bg-vibrant-blue/10 text-vibrant-blue border border-vibrant-blue rounded-full text-sm font-medium hover:scale-105 transition-transform duration-300">Git</span>
+                        <span class="px-4 py-2 bg-vibrant-blue/10 text-vibrant-blue border border-vibrant-blue rounded-full text-sm font-medium hover:scale-105 transition-transform duration-300">Docker</span>
+                        <span class="px-4 py-2 bg-vibrant-blue/10 text-vibrant-blue border border-vibrant-blue rounded-full text-sm font-medium hover:scale-105 transition-transform duration-300">AWS</span>
+                    </div>
+                </div>
+                <div class="bg-dark-neutral border border-border-gray p-6 rounded-xl shadow-md hover:-translate-y-1 transition-transform duration-300">
+                    <h3 class="text-xl md:text-2xl font-semibold mb-4 text-soft-gray">Web Development</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-4 py-2 bg-vibrant-blue/10 text-vibrant-blue border border-vibrant-blue rounded-full text-sm font-medium hover:scale-105 transition-transform duration-300">HTML5</span>
+                        <span class="px-4 py-2 bg-vibrant-blue/10 text-vibrant-blue border border-vibrant-blue rounded-full text-sm font-medium hover:scale-105 transition-transform duration-300">CSS3</span>
+                        <span class="px-4 py-2 bg-vibrant-blue/10 text-vibrant-blue border border-vibrant-blue rounded-full text-sm font-medium hover:scale-105 transition-transform duration-300">JavaScript</span>
+                        <span class="px-4 py-2 bg-vibrant-blue/10 text-vibrant-blue border border-vibrant-blue rounded-full text-sm font-medium hover:scale-105 transition-transform duration-300">React</span>
+                        <span class="px-4 py-2 bg-vibrant-blue/10 text-vibrant-blue border border-vibrant-blue rounded-full text-sm font-medium hover:scale-105 transition-transform duration-300">Node.js</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 md:py-24 bg-dark-neutral">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 md:mb-16 relative">
+                <span class="relative inline-block">
+                    Featured Projects
+                    <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-vibrant-blue to-transparent rounded"></span>
+                </span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <div class="bg-charcoal border border-border-gray rounded-xl overflow-hidden shadow-md hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+                    <div class="w-full h-48 bg-gradient-to-br from-charcoal to-dark-neutral border-b border-border-gray flex items-center justify-center">
+                        <div class="text-soft-gray font-semibold text-xl opacity-70">Project Image</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl md:text-2xl font-semibold mb-3 text-soft-gray">E-Commerce Platform</h3>
+                        <p class="text-soft-gray-secondary mb-4 leading-relaxed">
+                            A full-stack e-commerce solution with user authentication, 
+                            payment integration, and admin dashboard.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-vibrant-blue/10 text-vibrant-blue border border-vibrant-blue/30 rounded-full text-xs md:text-sm font-medium">React</span>
+                            <span class="px-3 py-1 bg-vibrant-blue/10 text-vibrant-blue border border-vibrant-blue/30 rounded-full text-xs md:text-sm font-medium">Node.js</span>
+                            <span class="px-3 py-1 bg-vibrant-blue/10 text-vibrant-blue border border-vibrant-blue/30 rounded-full text-xs md:text-sm font-medium">MongoDB</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-vibrant-blue font-semibold hover:text-vibrant-blue-dark transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-vibrant-blue after:transition-all after:duration-300 hover:after:w-full">Live Demo</a>
+                            <a href="#" class="text-vibrant-blue font-semibold hover:text-vibrant-blue-dark transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-vibrant-blue after:transition-all after:duration-300 hover:after:w-full">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-charcoal border border-border-gray rounded-xl overflow-hidden shadow-md hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+                    <div class="w-full h-48 bg-gradient-to-br from-charcoal to-dark-neutral border-b border-border-gray flex items-center justify-center">
+                        <div class="text-soft-gray font-semibold text-xl opacity-70">Project Image</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl md:text-2xl font-semibold mb-3 text-soft-gray">Task Management App</h3>
+                        <p class="text-soft-gray-secondary mb-4 leading-relaxed">
+                            A collaborative task management application with real-time updates, 
+                            team collaboration, and advanced filtering.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-vibrant-blue/10 text-vibrant-blue border border-vibrant-blue/30 rounded-full text-xs md:text-sm font-medium">Vue.js</span>
+                            <span class="px-3 py-1 bg-vibrant-blue/10 text-vibrant-blue border border-vibrant-blue/30 rounded-full text-xs md:text-sm font-medium">Express</span>
+                            <span class="px-3 py-1 bg-vibrant-blue/10 text-vibrant-blue border border-vibrant-blue/30 rounded-full text-xs md:text-sm font-medium">PostgreSQL</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-vibrant-blue font-semibold hover:text-vibrant-blue-dark transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-vibrant-blue after:transition-all after:duration-300 hover:after:w-full">Live Demo</a>
+                            <a href="#" class="text-vibrant-blue font-semibold hover:text-vibrant-blue-dark transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-vibrant-blue after:transition-all after:duration-300 hover:after:w-full">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-charcoal border border-border-gray rounded-xl overflow-hidden shadow-md hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+                    <div class="w-full h-48 bg-gradient-to-br from-charcoal to-dark-neutral border-b border-border-gray flex items-center justify-center">
+                        <div class="text-soft-gray font-semibold text-xl opacity-70">Project Image</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl md:text-2xl font-semibold mb-3 text-soft-gray">Security Lab Write-ups</h3>
+                        <p class="text-soft-gray-secondary mb-4 leading-relaxed">
+                            Documentation and analysis of security labs, vulnerability assessments, 
+                            and penetration testing exercises. Includes detailed methodologies and findings.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-vibrant-blue/10 text-vibrant-blue border border-vibrant-blue/30 rounded-full text-xs md:text-sm font-medium">Security Analysis</span>
+                            <span class="px-3 py-1 bg-vibrant-blue/10 text-vibrant-blue border border-vibrant-blue/30 rounded-full text-xs md:text-sm font-medium">Threat Research</span>
+                            <span class="px-3 py-1 bg-vibrant-blue/10 text-vibrant-blue border border-vibrant-blue/30 rounded-full text-xs md:text-sm font-medium">Documentation</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-vibrant-blue font-semibold hover:text-vibrant-blue-dark transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-vibrant-blue after:transition-all after:duration-300 hover:after:w-full">View Write-ups</a>
+                            <a href="#" class="text-vibrant-blue font-semibold hover:text-vibrant-blue-dark transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-vibrant-blue after:transition-all after:duration-300 hover:after:w-full">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 md:py-24 bg-charcoal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 md:mb-16 relative">
+                <span class="relative inline-block">
+                    Get In Touch
+                    <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-vibrant-blue to-transparent rounded"></span>
+                </span>
+            </h2>
+            <p class="text-center text-lg md:text-xl text-soft-gray-secondary mb-12 max-w-2xl mx-auto">
+                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+            </p>
+            <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+                <div class="lg:col-span-1 space-y-8">
+                    <div>
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 text-soft-gray">Email</h3>
+                        <a href="mailto:feizalsaid9@gmail.com" class="text-vibrant-blue hover:text-vibrant-blue-dark transition-colors duration-300 inline-block hover:translate-x-1">feizalsaid9@gmail.com</a>
+                    </div>
+                    <div>
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 text-soft-gray">GitHub</h3>
+                        <a href="https://github.com/feizalsaid" target="_blank" rel="noopener noreferrer" class="text-vibrant-blue hover:text-vibrant-blue-dark transition-colors duration-300 inline-block hover:translate-x-1">github.com/feizalsaid</a>
+                    </div>
+                </div>
+                <form class="lg:col-span-2 space-y-6 contact-form" id="contactForm">
+                    <div>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required
+                            class="w-full px-4 py-3 bg-dark-neutral border-2 border-border-gray rounded-lg text-soft-gray placeholder-soft-gray-secondary focus:outline-none focus:border-vibrant-blue focus:ring-4 focus:ring-vibrant-blue/10 transition-all duration-300">
+                    </div>
+                    <div>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required
+                            class="w-full px-4 py-3 bg-dark-neutral border-2 border-border-gray rounded-lg text-soft-gray placeholder-soft-gray-secondary focus:outline-none focus:border-vibrant-blue focus:ring-4 focus:ring-vibrant-blue/10 transition-all duration-300">
+                    </div>
+                    <div>
+                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required
+                            class="w-full px-4 py-3 bg-dark-neutral border-2 border-border-gray rounded-lg text-soft-gray placeholder-soft-gray-secondary focus:outline-none focus:border-vibrant-blue focus:ring-4 focus:ring-vibrant-blue/10 transition-all duration-300 resize-y min-h-[120px]"></textarea>
+                    </div>
+                    <button type="submit" class="px-8 py-3.5 bg-transparent border-2 border-vibrant-blue text-vibrant-blue font-semibold rounded-lg hover:bg-vibrant-blue/10 hover:-translate-y-0.5 transition-all duration-300 shadow-lg hover:shadow-xl">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-bg-dark text-soft-gray py-8 text-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p>&copy; 2024 Feizal Said. All rights reserved.</p>
+            <p class="mt-2 opacity-70 text-sm">Built with ❤️ using HTML, Tailwind CSS & JavaScript</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
